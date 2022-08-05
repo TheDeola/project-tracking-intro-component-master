@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/TheDeola/project-tracking-intro-component-master)
+- Live Site URL: [Live Site](https://project-tracking-site.netlify.app/)
 
 ## My process
 
@@ -86,9 +86,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [Add your name here](https://thedeola.netlify.app)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/TheDeola)
-- Twitter - [@yourusername](https://www.twitter.com/deolacodes)
+- Website - [TheDeola](https://thedeola.netlify.app)
+- Frontend Mentor - [@TheDeola](https://www.frontendmentor.io/profile/TheDeola)
+- Twitter - [@deolacodes](https://www.twitter.com/deolacodes)
 
 
 ## Acknowledgments
