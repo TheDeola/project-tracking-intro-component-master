@@ -1,163 +1,258 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
 
-* {
+:root {
+    /* colors */
+    --red: hsl(0, 100%, 68%);
+    --very-dark-blue:  hsl(230, 29%, 20%);
+    --dark-grayish-blue: hsl(230, 11%, 40%);
+    --grayish-blue: hsl(231, 7%, 65%);
+    --light-grayish-blue: hsl(207, 33%, 95%);
+
+    /* fonts */
+    --fontSize: 18px;
+    --fontFamilyBarlow: 'Barlow', sans-serif;
+    --fontFamilyBarlowCondensed: 'Barlow Condensed', sans-serif;
+    --fontWeightRegular: 400;
+    --fontWeightBold: 700;
+
+    /* media queries */
+    --mobile: 375px;
+    --desktop: 1440px;
+}
+*,
+*::before,
+*::after {
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
-:root {
-    --Red: hsl(0, 100%, 68%);
-    --Very-Dark-Blue: hsl(230, 29%, 20%);
-    --Dark-Grayish-Blue: hsl(230, 11%, 40%);
-    --Grayish-Blue: hsl(231, 7%, 65%);
-    --Light-Grayish-Blue: hsl(207, 33%, 95%);
-    --font-family-1: 'Barlow', sans-serif;
-    --font-family-2: 'Barlow Condensed', sans-serif;
-    --Font-size: 18px;
+body {
+    color: var(--very-dark-blue);
+    font-family: var(--fontFamilyBarlow);
+    font-size: var(--fontSize);
+    overflow-x: hidden;
 }
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: var(--Font-size);
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60vh;
+    width: 50vw;
+    background-color: var(--light-grayish-blue);
+    z-index: -1;
+    border-bottom-left-radius: 90px;
 }
-.container {
-    width: 375px;
+img {
+    max-width: 100%;
+}
+li > a:hover {
+    text-decoration: underline;
+}
+.image {
+    margin: 100px 0px;
+}
+.illustration {
+    transform: scale(1.5) translateX(12%);
+}
+.main-container {
+    width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    font-family: var(--font-family-1);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top right;
-    text-transform: uppercase;
+    padding: 35px;
 }
-
-/* Hide the links inside the navigation menu (except for logo/home) */
-
-#myLinks {
-    visibility: hidden;
+.desktop-nav, 
+.close-icon,
+.mobile-dropdown {
+    display: none;
 }
-
-/* Style navigation menu links */
-
-#myLinks a {
-    color: var(--Dark-Grayish-Blue);
-    padding: 5px 16px;
-    text-decoration: none;
-    font-size: 17px;
+.show-mobile-nav .hamburger-icon {
+    display: none;
+}
+.show-mobile-nav .mobile-dropdown {
+    display: flex;
+}
+.show-mobile-nav .close-icon {
     display: block;
 }
-  
-.header {
+.navigation-bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0% 9% 10% 6%;
-    padding-top: 2%;
+    justify-content: space-between;
+    position: relative;
 }
-#banner-image img {
-    width: 500px;
-    margin-bottom: 50px;
-    margin-left: -20px;
-    margin-top: 30px;
-    padding: 0% 9% 10% 6%;
+.mobile-dropdown {
+    position: absolute;
+    top: 60px;
+    background: #ffffff;
+    list-style: none;
+    padding: 25px;
+    text-align: center;
+    width: calc(100vw - 70px);
+    margin: 0 auto;
+    z-index: 2;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px #aaa;
+    flex-direction: column;
+    gap: 20px;
 }
-.section {
-    padding: 0% 9% 15% 6%;
-    padding-top: 30px;
+.mobile-dropdown > li {
+    position: relative;
 }
-.section h1 {
-    color: var(--Very-Dark-Blue);
-    font-family: var(--font-family-2);
-    font-size: 40px;
-}
-.section p {
-    text-transform: none;
-    color: var(--Dark-Grayish-Blue);
-}
-.text-new {
-    border: 1px solid var(--Very-Dark-Blue);
-    border-radius: 20px;
-    padding: 5px 10px;
-    background-color: var(--Very-Dark-Blue);
-    color:hsl(207, 33%, 95%);
-    margin-right: 10px;
-}
-.text-mono {
-    color: var(--Grayish-Blue);
-}
-#submit {
-    border: 1px solid var(--Red);
-    border-radius: 5px;
-    background-color: var(--Red);
-    color:hsl(207, 33%, 95%);
-    padding: 10px 20px;
+.mobile-dropdown > li > a {
+    text-decoration: none;
     text-transform: uppercase;
-    font-size: x-small;
-    font-family: var(--font-family-2);
+    color: var(--very-dark-blue);
+    font-weight: var(--fontWeightBold);
+    font-family: var(--fontFamilyBarlowCondensed);
+    letter-spacing: 1px;
+}
+.mobile-dropdown > li > a.login {
+    margin-top: 20px;
+    color: var(--grayish-blue);
+    display: inline-block;
+}
+.mobile-dropdown > li > a.login::before {
+    content: "";
+    position: absolute;
+    top:0px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: var(--light-grayish-blue);
+}
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.mini-heading {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: var(--fontFamilyBarlowCondensed);
+    font-weight: var(--fontWeightRegular);
+    color: var(--grayish-blue);
+}
+.mini-heading > .note {
+    font-family: var(--fontFamilyBarlowCondensed);
+    font-weight: var(--fontWeightBold);
+    background-color: var(--very-dark-blue);
+    border-radius: 20px;
+    color: white;
+    padding: 3px 10px;
+    margin-right: 10px;
     letter-spacing: 2px;
-    margin-right: 20px;
 }
-#submit:hover {
+.heading {
+    margin-top: 16px;
+    font-family: var(--fontFamilyBarlowCondensed);
+    font-weight: var(--fontWeightBold);
+    text-transform: uppercase;
+    font-size: 40px;
+
+}
+.description {
+    color: var(--dark-grayish-blue);
+    font-size: 20px;
+    line-height: 32px;
+    margin: 15px 0px 35px 0px;
+}
+.action-buttons {
+    display: flex;
+}
+.btn-primary {
+    text-transform: uppercase;
+    font-weight: var(--fontWeightBold);
+    font-family: var(--fontFamilyBarlowCondensed);
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: var(--red);
+    letter-spacing: 1px;
+}
+.btn-primary:hover {
+    opacity: 0.5;
     cursor: pointer;
-    background-color:hsl(0, 74%, 77%);
-    border: 1px solid hsl(0, 74%, 77%);
 }
-.preview {
-    font-size: small;
-    color: var(--Grayish-Blue);
+.btn-secondary {
+    padding: 10px 0px;
+    padding-left: 15px;
+    border: none;
+    background-color: transparent;
 }
-.attribution { 
-    visibility: hidden;
-    font-size: 10px; 
-    text-align: center; 
-    text-transform: none;
-}
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+footer {
+    font-size: xx-small;
+    text-align: center;
+    margin: 100px auto;
 }
 
 /* Desktop Styling */
 
-@media screen and (min-width:600px) {
+@media (min-width: 768px) {
+    .left {
+        flex: 0.9;
+    }
+    .right {
+        flex: 1.1;
+    }
+    .illustration {
+        transform: scale(1.8) translateX(25%);
+    }
+    .heading {
+        font-size: 60px;
+    }
+    .description {
+        max-width: 300px;
+        margin: 35px 0 65px 0;
+    }
+    .btn-primary {
+        padding: 18px 35px;
+    }
     .container {
-        width: 100%;
-        min-width: 1440px;
-        height: 100vh;
-        padding-left: 10%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 180px;
     }
-    .flex {
+    .image {
+        margin: 60px 0px;
+    }
+    .desktop-nav {
         display: flex;
-        flex-direction: row-reverse;
+        list-style: none;
+        gap: 50px;
+        padding: 0px;
+        margin: 0px;
     }
-    .header {
-        padding-top: 2%;
+    .desktop-nav > li {
+        position: relative;
     }
-    #banner-image img {
-        width: 800px;
-        margin-bottom: 50px;
-        margin-left: -20px;
-        margin-top: 30px;
-        padding: 0% 9% 10% 6%;
-    }
-    .icon {
+    .mobile-dropdown {
         display: none;
     }
-    #myLinks {
-        visibility: visible;
-        display: flex;
+    .desktop-nav > li > a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--very-dark-blue);
+        font-weight: var(--fontWeightBold);
+        font-family: var(--fontFamilyBarlowCondensed);
+        letter-spacing: 1px;
     }
-    #myLinks a {
-        color: var(--Very-Dark-Blue);
-        font-family: var(--font-family-2);
-        font-weight: 700;
+    li > a.login {
+        margin-left: 50px;
+        color: var(--grayish-blue);
     }
-    #myLinks a:hover {
-        cursor: pointer;
-        text-decoration: underline;
+    li > a.login::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--grayish-blue);
+        position: absolute;
+        left: 0px;
+        top: 6px;
+        border-radius: 50%;
+
     }
-    #myLinks span {
-        color: var(--Grayish-Blue);
-    }
-    #myLinks .login {
-        color: var(--Grayish-Blue);
+    .nav-icons {
+        display: none;
     }
 }
