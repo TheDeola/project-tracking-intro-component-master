@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+:root {
+    --Red: hsl(0, 100%, 68%);
+    --Very-Dark-Blue: hsl(230, 29%, 20%);
+    --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+    --Grayish-Blue: hsl(231, 7%, 65%);
+    --Light-Grayish-Blue: hsl(207, 33%, 95%);
+    --font-family-1: 'Barlow', sans-serif;
+    --font-family-2: 'Barlow Condensed', sans-serif;
+    --Font-size: 18px;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: var(--Font-size);
+}
+.container {
+    width: 375px;
+    margin: 0 auto;
+    font-family: var(--font-family-1);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top right;
+    text-transform: uppercase;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+
+#myLinks {
+    visibility: hidden;
+}
+
+/* Style navigation menu links */
+
+#myLinks a {
+    color: var(--Dark-Grayish-Blue);
+    padding: 5px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 9% 10% 6%;
+    padding-top: 2%;
+}
+#banner-image img {
+    width: 500px;
+    margin-bottom: 50px;
+    margin-left: -20px;
+    margin-top: 30px;
+    padding: 0% 9% 10% 6%;
+}
+.section {
+    padding: 0% 9% 15% 6%;
+    padding-top: 30px;
+}
+.section h1 {
+    color: var(--Very-Dark-Blue);
+    font-family: var(--font-family-2);
+    font-size: 40px;
+}
+.section p {
+    text-transform: none;
+    color: var(--Dark-Grayish-Blue);
+}
+.text-new {
+    border: 1px solid var(--Very-Dark-Blue);
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: var(--Very-Dark-Blue);
+    color:hsl(207, 33%, 95%);
+    margin-right: 10px;
+}
+.text-mono {
+    color: var(--Grayish-Blue);
+}
+#submit {
+    border: 1px solid var(--Red);
+    border-radius: 5px;
+    background-color: var(--Red);
+    color:hsl(207, 33%, 95%);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: x-small;
+    font-family: var(--font-family-2);
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+#submit:hover {
+    cursor: pointer;
+    background-color:hsl(0, 74%, 77%);
+    border: 1px solid hsl(0, 74%, 77%);
+}
+.preview {
+    font-size: small;
+    color: var(--Grayish-Blue);
+}
+.attribution { 
+    visibility: hidden;
+    font-size: 10px; 
+    text-align: center; 
+    text-transform: none;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Desktop Styling */
+
+@media screen and (min-width:600px) {
+    .container {
+        width: 100%;
+        min-width: 1440px;
+        height: 100vh;
+        padding-left: 10%;
+    }
+    .flex {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .header {
+        padding-top: 2%;
+    }
+    #banner-image img {
+        width: 800px;
+        margin-bottom: 50px;
+        margin-left: -20px;
+        margin-top: 30px;
+        padding: 0% 9% 10% 6%;
+    }
+    .icon {
+        display: none;
+    }
+    #myLinks {
+        visibility: visible;
+        display: flex;
+    }
+    #myLinks a {
+        color: var(--Very-Dark-Blue);
+        font-family: var(--font-family-2);
+        font-weight: 700;
+    }
+    #myLinks a:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    #myLinks span {
+        color: var(--Grayish-Blue);
+    }
+    #myLinks .login {
+        color: var(--Grayish-Blue);
+    }
+}
